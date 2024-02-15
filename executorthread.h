@@ -6,7 +6,6 @@
 #include <memory>
 #include <iostream>
 
-#include "logger.h"
 #include "priority_queue.h"
 #include "commands.h"
 
