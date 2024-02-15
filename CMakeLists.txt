@@ -17,9 +17,10 @@ project(msg_exchange VERSION ${PROJECT_VESRION})
 #find_package(Boost 1.83 REQUIRED)
 find_package(Boost 1.74 REQUIRED)
 
-add_executable(msg_exchange main.cpp )
+
 add_library(commonlib common.cpp) 
 add_library(serverlib server.cpp) 
+add_executable(msg_exchange main.cpp )
 
 set_target_properties(msg_exchange  PROPERTIES
     CXX_STANDARD 17
@@ -37,9 +38,12 @@ set_target_properties(msg_exchange  PROPERTIES
 #    INCLUDE_DIRECTORIES ${Boost_INCLUDE_DIR} 
 #)
 
+target_link_libraries(serverlib
+    ${Boost_LIBRARIES}
+    commonlib
+)
 
 target_link_libraries(msg_exchange
-    ${Boost_LIBRARIES}
     commonlib
     serverlib
 )
