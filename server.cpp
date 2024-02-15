@@ -16,7 +16,8 @@
             if (error)
             {
 
-                KBL::Logger::Error("SERVER WRITE ERROR: "+error.to_string()+" "+error.message());
+                //KBL::Logger::Error("SERVER WRITE ERROR: "+error.to_string()+" "+error.message());
+                KBL::Logger::Error("SERVER WRITE ERROR: "+error.message());
                 std::cout<<"Write Error:  "<<error.value()<<" "<<error.message()<<std::endl;
             }
             else
@@ -80,7 +81,8 @@
                         not_loginning=true;
                     }
 
-                    KBL::Logger::Error("SERV READ: "+error.to_string()+" "+error.message());
+                    //KBL::Logger::Error("SERV READ: "+error.to_string()+" "+error.message());
+                    KBL::Logger::Error("SERV READ: "+error.message());
                     std::cout<<"ReadError:  "<<m_id<<" "<<free<<" "<<error.value()<<" "<<error.message()<<std::endl;
                 }
                 if (!free) doRead();
@@ -132,7 +134,8 @@
            }
            else
             {
-                KBL::Logger::Error("SERV ACCEPT: "+error.to_string()+ " "+error.message());
+                //KBL::Logger::Error("SERV ACCEPT: "+error.to_string()+ " "+error.message());
+                KBL::Logger::Error("SERV ACCEPT: "+error.message());
                 std::cout<<"ERR ACCEPT: "<<error.value()<<" "<<error.message()<<std::endl;
             }
 
