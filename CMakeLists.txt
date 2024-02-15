@@ -14,7 +14,8 @@ set(PROJECT_VESRION 0.0.${PATCH_VERSION})
 
 project(msg_exchange VERSION ${PROJECT_VESRION})
 
-find_package(Boost 1.83 REQUIRED)
+#find_package(Boost 1.83 REQUIRED)
+find_package(Boost 1.74 REQUIRED)
 
 add_executable(msg_exchange main.cpp )
 add_library(commonlib common.cpp) 
