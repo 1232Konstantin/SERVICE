@@ -28,7 +28,13 @@ set_target_properties(msg_exchange  PROPERTIES
 )
 
 #for GITHUB
-set_target_properties(msg_exchange  PROPERTIES
+set_target_properties(commonlib  PROPERTIES
+    COMPILE_DEFINITIONS BOOST_TEST_DYN_LINK
+    INCLUDE_DIRECTORIES ${Boost_INCLUDE_DIR}
+)
+
+
+set_target_properties(serverlib  PROPERTIES
     COMPILE_DEFINITIONS BOOST_TEST_DYN_LINK
     INCLUDE_DIRECTORIES ${Boost_INCLUDE_DIR}
 )
@@ -37,6 +43,10 @@ set_target_properties(msg_exchange  PROPERTIES
 #set_target_properties(msg_exchange  PROPERTIES
 #    INCLUDE_DIRECTORIES ${Boost_INCLUDE_DIR} 
 #)
+
+target_link_libraries(commonlib
+    ${Boost_LIBRARIES}
+)
 
 target_link_libraries(serverlib
     ${Boost_LIBRARIES}
